@@ -44,8 +44,6 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-         // added the script below in fixing a bug
-        // multiDexEnabled true
     }
 
     buildTypes {
@@ -60,7 +58,5 @@ flutter {
 }
 
 dependencies {
-    // implementation platform("com.google.firebase:firebase-bom:33.9.0")
-    // coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4' // Use the latest version
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
