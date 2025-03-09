@@ -16,7 +16,18 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion 32
+    namespace 'co.paystack.flutterpaystackexample'
+    compileSdkVersion 35
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+        coreLibraryDesugaringEnabled true // Enable desugaring
+    }
+
+    kotlin {
+        jvmToolchain(21)  // Set the JVM version to 21
+    }
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -28,11 +39,13 @@ android {
 
     defaultConfig {
         applicationId "co.paystack.flutterpaystack"
-        minSdkVersion 16
-        targetSdkVersion 32
+        minSdkVersion 23
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+         // added the script below in fixing a bug
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -44,4 +57,10 @@ android {
 
 flutter {
     source '../..'
+}
+
+dependencies {
+    // implementation platform("com.google.firebase:firebase-bom:33.9.0")
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4' // Use the latest version
+    // implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
