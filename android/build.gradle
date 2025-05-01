@@ -29,13 +29,13 @@ android {
     compileSdkVersion 34
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_21
-        targetCompatibility JavaVersion.VERSION_21
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
         // coreLibraryDesugaringEnabled true // Enable desugaring
     }
 
     kotlinOptions {
-        jvmTarget = '21' // set java compatibility to 21
+        jvmTarget = '1.8' // set Java compatibility to 1.8
     }
 
     sourceSets {
